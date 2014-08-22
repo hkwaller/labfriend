@@ -1,0 +1,41 @@
+<ion-view title="Legg til produkt">
+  <ion-content has-header="true" padding="true">
+      <div class="list list-inset">
+            <form>
+            <label class="item item-input">
+                <i class="icon ion-record placeholder-icon"></i>
+                <input type="text" ng-model="product.make" placeholder="Merke">
+              </label>
+              <label class="item item-input">
+                <i class="icon ion-record placeholder-icon"></i>
+                <input type="text" ng-model="product.model" placeholder="Modell">
+              </label>
+              <label class="item item-input item-select">
+                <div class="input-label">
+                  Type
+                </div>
+                <select ng-model="product.type">
+                  <option value="Telefon" selected>Telefon</option>
+                  <option value="Tablet">Tablet</option>
+                  <option value="Annet">Annet</option>
+                </select>
+              </label>
+              <label class="item item-input item-select">
+                <div class="input-label">
+                  Operativsystem
+                </div>
+                <select ng-model="product.os">
+                  <option value="Android" selected>Android</option>
+                  <option value="iOS">iOS</option>
+                  <option value="Windows">Windows</option>
+                  <option value="Annet">Annet</option>
+                </select>
+              </label>
+            </div>
+            <button class="button button-block button-balanced" ng-submit="add(product)">
+                Legg til produkt
+            </button>
+        </form>  
+
+  </ion-content>
+</ion-view>

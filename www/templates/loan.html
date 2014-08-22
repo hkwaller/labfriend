@@ -1,0 +1,38 @@
+<!--
+  This template loads for the 'tab.friend-detail' state (app.js)
+  'friend' is a $scope variable created in the FriendsCtrl controller (controllers.js)
+  The FriendsCtrl pulls data from the Friends service (service.js)
+  The Friends service returns an array of friend data
+-->
+<ion-view title="{{e.model}}">
+  <ion-content has-header="true" padding="true">
+      <div class="list list-inset">
+          <label class="item item-input">
+            <i class="icon ion-person placeholder-icon"></i>
+            <input type="text" ng-model="loan.loanee" placeholder="Hvem?">
+          </label>
+          <label class="item item-input">
+            <i class="icon ion-ios7-telephone placeholder-icon"></i>
+            <input type="tel" ng-model="loan.phonenumber" placeholder="Telefonnummer?">
+          </label>
+          <label class="item item-input">
+            <i class="icon ion-ipad placeholder-icon"></i>
+            <input type="text" placeholder="Hva?" ng-model="loan.device">
+          </label>
+          <label class="item item-input ">
+            <div class="margin-right">Hvor lenge?</div><strong>{{ loan.days }} dagar</strong>        
+          </label>
+
+          <div class="item range range-positive">
+            <i class="icon ion-ios7-clock-outline"></i>
+            <input type="range" name="volume" min="0" max="30" value="7" ng-model="loan.days">
+            <i class="icon ion-ios7-clock"></i>
+          </div>
+        </div>
+        <button class="button button-block button-positive" ng-click="startLoan(loan)">
+            Start lån
+        </button>
+      
+
+  </ion-content>
+</ion-view>

@@ -1,0 +1,13 @@
+<ion-view title="Utlån">
+  <ion-content class="has-header">
+    <ion-list class="item-icon-right">
+          <ion-item class="small-header"><h3 class="small-header">På utlån</h3></ion-item>
+            <ion-item ng-repeat="e in loans" item="e" href="#/tab/loan/{{e.$id}}">              
+                <span class="width-list">{{ e.device }}</span> 
+              <ion-option-button class="button-assertive" ng-click="return(e)">Returnere
+              </ion-option-button>
+              <i class="icon ion-close-circled red-icon"></i>
+            </ion-item>
+      </ion-list><!---->
+  </ion-content>
+</ion-view>

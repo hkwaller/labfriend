@@ -1,0 +1,21 @@
+<ion-view title="Utstyr">
+    <ion-nav-buttons side="right">
+      <button class="button button-icon ion-plus-round" ng-click="gotoAdd()"></button>
+    </ion-nav-buttons>
+  <ion-content class="has-header">
+      <ion-list class="item-icon-right">
+          <ion-item class="small-header"><h3 class="small-header">Inne</h3></ion-item>
+        <ion-item ng-repeat="e in equipment | filter:!available" 
+                  item="e"
+                  href="#/tab/utstyr/{{e.$id}}">
+                  <span class="width-list">{{ e.make }} {{ e.model }}</span>
+               
+          <ion-option-button class="button-balanced"
+                             ng-click="startLoan(e)">Start utlån
+          </ion-option-button>
+          <i class="icon ion-checkmark-circled green-icon"></i>
+    
+        </ion-item>
+      </ion-list>
+  </ion-content>
+</ion-view>

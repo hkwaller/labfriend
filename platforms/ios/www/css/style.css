@@ -1,0 +1,19 @@
+.red-icon {
+    color: #e65757;
+}
+.green-icon {
+    color: #3eea73;
+}
+
+.small-header {
+    background: rgb(146, 183, 240);
+    color: #fff;
+}
+
+.margin-right {
+    margin-right: 1em;
+}
+
+.margin-left {
+    margin-left:1em !important;
+}
