@@ -24,7 +24,19 @@ angular.module('starter.controllers', [])
 
 .controller('DetailCtrl', function($scope, $stateParams, $location, FirebaseService) {
     $scope.equipment = FirebaseService.equipment();
-    $scope.e = $scope.equipment.$getRecord($stateParams.id);
+    $scope.loans = FirebaseService.loans();
+    
+    if ($scope.equipment.$getRecord($stateParams.id) !== null) {
+         $scope.e = $scope.equipment.$getRecord($stateParams.id);
+         $scope.name = $scope.e.make + " " + $scope.e.model;
+        $scope.loan = false;
+    } else {
+         $scope.e = $scope.loans.$getRecord($stateParams.id);
+        $scope.name = $scope.e.device;
+        $scope.loan = true;
+    }
+    
+    console.log($scope.e);
     
     $scope.availability = function(product) {
         if (product.available) return "Ledig";
