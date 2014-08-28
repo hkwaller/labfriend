@@ -26,7 +26,19 @@ angular.module('starter.controllers', [])
 
 .controller('DetailCtrl', function($scope, $stateParams, $location, FirebaseService) {
     $scope.equipment = FirebaseService.equipment();
-    $scope.e = $scope.equipment.$getRecord($stateParams.id);
+    $scope.loans = FirebaseService.loans();
+    
+    if ($scope.equipment.$getRecord($stateParams.id) !== null) {
+         $scope.e = $scope.equipment.$getRecord($stateParams.id);
+         $scope.name = $scope.e.make + " " + $scope.e.model;
+        $scope.loan = false;
+    } else {
+         $scope.e = $scope.loans.$getRecord($stateParams.id);
+        $scope.name = $scope.e.device;
+        $scope.loan = true;
+    }
+    
+    console.log($scope.e);
     
     $scope.availability = function(product) {
         if (product.available) return "Ledig";
@@ -81,7 +93,7 @@ angular.module('starter.controllers', [])
         loan.id = $scope.e.$id;
         loan.accs = $scope.accs;
          
-        if ($scope.e.previousLoans !== undefined || $scope.e.previousLoans.length > 0) {
+        if ($scope.e.previousLoans !== undefined) {
             $scope.e.previousLoans.push({'name':loan.loanee, 'phone':loan.phonenumber});
         } 
         
@@ -113,13 +125,20 @@ angular.module('starter.controllers', [])
     $scope.loans = FirebaseService.loans();
 
     $scope.loan = $scope.loans.$getRecord($stateParams.id);
-    $scope.e = $scope.equipment.$getRecord($scope.loan.id);
+    
+    if ($stateParams.id === null) {
+        $location.path('/loans');
+    } else {
+        $scope.e = $scope.equipment.$getRecord($scope.loan.id);
+    }
+    
     
     $scope.return = function() {
         $scope.e.available = true;
         $scope.loans.$remove($scope.loan);
         $scope.equipment.$save($scope.equipment.indexOf($scope.e));
-        $location.path("/loans/");
+        $location.path("/loans");
+
     }
     
 });

@@ -3,13 +3,19 @@
       <div class="list">
 
       <div class="item">
-        <h2>{{e.model}} {{e.make}}</h2>
+        <h2>{{name}}</h2>
       </div>
       <div class="item item-button-right">
             Denne er: <b>{{availability(e)}}</b>
+<<<<<<< HEAD
            <!--<button class="button button-balanced" ng-click="startLoan(e)">
               <i class="icon ion-arrow-right-c"></i>
             </button>-->
+=======
+           <button class="button" ng-class="{'button-assertive' : loan, 'button-balanced' : !loan}" ng-click="startLoan()">
+              <i class="icon" ng-class="{'ion-arrow-left-c' : loan, 'ion-arrow-right-c' : !loan}"></i>
+            </button>
+>>>>>>> FETCH_HEAD
       </div>
       <div class="item">
           <h2>Tilbehør</h2>
@@ -22,7 +28,7 @@
           <div class="item">
             <h2>Tidligere utlån</h2>
           </div>
-      <div class="item item-icon-right" ng-repeat="loans in e.previousLoans | orderBy:$index:desc">
+      <div class="item item-icon-right" ng-repeat="loans in e.previousLoans | limitTo:5">
            {{loans.name}}
             <a href="tel:{{loans.phone}}"><i class="icon ion-ios7-telephone"></i></a>
           </div> 
