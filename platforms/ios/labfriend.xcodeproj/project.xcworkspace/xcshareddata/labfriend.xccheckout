@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>221B9558-F72E-4D14-9767-81783A40854A</string>
+	<key>IDESourceControlProjectName</key>
+	<string>labfriend</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>D3EC0BA0B0DA1BD82020AA7B1B945562F1EA095E</key>
+		<string>https://github.com/hkwaller/labfriend.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>platforms/ios/labfriend.xcodeproj</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>D3EC0BA0B0DA1BD82020AA7B1B945562F1EA095E</key>
+		<string>../../../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/hkwaller/labfriend.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>D3EC0BA0B0DA1BD82020AA7B1B945562F1EA095E</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>D3EC0BA0B0DA1BD82020AA7B1B945562F1EA095E</string>
+			<key>IDESourceControlWCCName</key>
+			<string>labfriendgit</string>
+		</dict>
+	</array>
+</dict>
+</plist>

@@ -6,14 +6,11 @@
 }
 
 .small-header {
-    background: rgb(146, 183, 240);
-    color: #fff;
+    color: #807e7e;
 }
 
 .margin-right {
     margin-right: 1em;
 }
 
-.margin-left {
-    margin-left:1em !important;
-}
+

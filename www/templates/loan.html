@@ -19,6 +19,20 @@
             <i class="icon ion-ipad placeholder-icon"></i>
             <input type="text" placeholder="Hva?" ng-model="loan.device">
           </label>
+          
+          <label class="item item-icon-right" ng-click="showAccs = !showAccs">
+                    Tilbehør
+                    <i class="icon ion-arrow-down-b"></i>
+                  </label>
+                  <ul class="list"  ng-show="showAccs">
+
+                  <li ng-repeat="a in e.acc" class="item item-checkbox">
+                     <label class="checkbox">
+                       <input type="checkbox" ng-true-value="{{a}}"  ng-click="addAcc(a)">
+                     </label>
+                     {{a}}
+                  </li>
+                </ul>
           <label class="item item-input ">
             <div class="margin-right">Hvor lenge?</div><strong>{{ loan.days }} dagar</strong>        
           </label>

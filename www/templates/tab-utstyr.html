@@ -4,7 +4,9 @@
     </ion-nav-buttons>
   <ion-content class="has-header">
       <ion-list class="item-icon-right">
-          <ion-item class="small-header"><h3 class="small-header">Inne</h3></ion-item>
+        <ion-item ng-show="equipment.length < 1">
+            Ingenting her enda
+        </ion-item>
         <ion-item ng-repeat="e in equipment | filter:!available" 
                   item="e"
                   href="#/tab/utstyr/{{e.$id}}">

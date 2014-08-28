@@ -31,8 +31,47 @@
                   <option value="Annet">Annet</option>
                 </select>
               </label>
+              <label class="item item-icon-right" ng-click="showAccs = !showAccs">
+                    Tilbehør
+                    <i class="icon ion-arrow-down-b"></i>
+                  </label>
+                  <ul class="list"  ng-show="showAccs">
+
+                  <li class="item item-checkbox">
+                     <label class="checkbox">
+                       <input type="checkbox" ng-true-value="Lader" ng-model="product.acc.lader">
+                     </label>
+                     Lader
+                  </li>
+                      <li class="item item-checkbox">
+                     <label class="checkbox">
+                       <input type="checkbox" ng-true-value="USB kabel" ng-model="product.acc.usb">
+                     </label>
+                     USB kabel
+                  </li>
+                      <li class="item item-checkbox">
+                     <label class="checkbox">
+                       <input type="checkbox" ng-true-value="Minnekort" ng-model="product.acc.memorycard">
+                     </label>
+                     Minnekort
+                  </li>
+                      <li class="item item-checkbox">
+                     <label class="checkbox">
+                       <input type="checkbox" ng-true-value="Box" ng-model="product.acc.box">
+                     </label>
+                     Boks
+                  </li>
+                      <li class="item item-checkbox">
+                     <label class="checkbox">
+                       <input type="checkbox" ng-true-value="Penn" ng-model="product.acc.penn">
+                     </label>
+                     Penn
+                  </li>
+                </ul>
+ 
+                  
             </div>
-            <button class="button button-block button-balanced" ng-submit="add(product)">
+            <button class="button button-block button-balanced" ng-click="add(product)">
                 Legg til produkt
             </button>
         </form>  
