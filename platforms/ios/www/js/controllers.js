@@ -52,6 +52,7 @@ angular.module('starter.controllers', [])
         $scope.delete = function() {
             $scope.equipment.$remove($scope.e);
             $ionicViewService.clearHistory();
+            
             $location.path("/loans");
             $scope.closeModal();
         }
@@ -93,7 +94,6 @@ angular.module('starter.controllers', [])
     
     $scope.e = $scope.loans.$getRecord($stateParams.id);
     $scope.eq = $scope.equipment.$getRecord($scope.e.id);
-
     
     $scope.availability = function(product) {
         if (product.available) return "Ledig";
@@ -127,8 +127,7 @@ angular.module('starter.controllers', [])
     
     $scope.startLoan = function(loan) {
         $scope.e.available = false;
-        loan.loandate = new Date();
-
+        loan.date = new Date().getTime();
         loan.id = $scope.e.$id;
         loan.accs = $scope.accs;
         $scope.e.previousLoans.push({'name':loan.loanee, 'phone':loan.phonenumber});
