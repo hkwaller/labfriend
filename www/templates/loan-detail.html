@@ -25,16 +25,17 @@
           <h2>Tilbehør utlånt</h2>
             <ul>
                 <li ng-repeat="a in e.accs">{{a}}</li>
+                <li ng-show="e.accs === undefined">Ingen tilbehør utlånt</li>
             </ul>
       </div>
     </div>
       <div class="list">
-          <div class="item">
-            <h2>Tidligere utlån</h2>
-          </div>
-          <div class="item">
-            Hannes
+          <div ng-repeat="loans in e.previousLoans | limitTo:5"> 
+      <div class="item item-icon-right">
+           <div>{{$index}} {{loans.name}}
+            <a href="tel:{{loans.phone}}"><i class="icon ion-ios7-telephone"></i></a></div>
           </div> 
+          </div>
     </div>
       <button class="button button-block button-assertive" ng-click="return(product)">
                 Returner

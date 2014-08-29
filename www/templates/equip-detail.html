@@ -1,4 +1,7 @@
 <ion-view title="{{e.model}}">
+    <ion-nav-buttons side="right">
+      <button class="button button-icon ion-trash-b" ng-click="openModal()"></button>
+    </ion-nav-buttons>
   <ion-content has-header="true" padding="true">
       <div class="list">
 
@@ -22,10 +25,14 @@
           <div class="item">
             <h2>Tidligere utlån</h2>
           </div>
-      <div class="item item-icon-right" ng-repeat="loans in e.previousLoans | limitTo:5">
-           {{loans.name}}
-            <a href="tel:{{loans.phone}}"><i class="icon ion-ios7-telephone"></i></a>
+          <div ng-repeat="loans in e.previousLoans | limitTo:5"> 
+      <div class="item item-icon-right" ng-show="check(loans)">
+           <div>{{loans.name}}
+            <a href="tel:{{loans.phone}}"><i class="icon ion-ios7-telephone"></i></a></div>
           </div> 
+          </div>
+        <div class="item" ng-show="e.previousLoans.length === 1">Ingen registrerte lån enda</div>
+
     </div>
   </ion-content>
 </ion-view>

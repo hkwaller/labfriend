@@ -13,4 +13,14 @@
     margin-right: 1em;
 }
 
+.custom-margin {
+    margin-top: 6em;
+}
 
+.extra-padding-left {
+    padding-left: 2em;
+}
+
+.extra-padding-right {
+    padding-right: 2em;
+}
