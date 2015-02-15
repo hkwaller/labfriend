@@ -100,6 +100,7 @@ angular.module('starter.controllers', [])
         else return "Utlånt";
     };
     
+    console.log($scope.e);
      $scope.return = function() {
         $scope.eq.available = true;
         $scope.loans.$remove($scope.e);
